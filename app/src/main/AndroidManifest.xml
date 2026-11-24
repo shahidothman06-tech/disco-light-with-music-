@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- ===================== PERMISSIONS (each one explained) ===================== -->
+
+    <!-- ADS (Google AdMob). Normal permissions, granted at install, no prompt. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- Advertising ID for AdMob. Declare "Advertising ID" in the Play Console data-safety form. -->
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+
+    <!-- MUSIC REACTION. Runtime permission, asked ONLY when the user picks
+         "Microphone" or "Phone music", with an explanation first. Audio is analysed
+         on the device and never recorded, saved or uploaded. -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- Needed by the audio Visualizer in "Phone music" mode. Normal permission. -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+
+    <!-- BEAT VIBRATION. Normal permission. -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- SCREEN-OFF MODE (optional, off by default). Keeps the flashlight flashing to the
+         music while the screen is locked. Android requires a visible notification. -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- FLASHLIGHT: CameraManager.setTorchMode needs NO permission. The camera is never
+         opened and no CAMERA permission is requested. -->
+
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false" />
+    <uses-feature android:name="android.hardware.microphone" android:required="false" />
+    <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="false" />
+
+    <application
+        android:name=".GlowApp"
+        android:allowBackup="true"
+        android:enableOnBackInvokedCallback="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.GlowParty.Splash">
+
+        <!-- AdMob app id (set per build type in app/build.gradle.kts) -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="${admobAppId}" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".service.LightService"
+            android:exported="false"
+            android:foregroundServiceType="microphone" />
+    </application>
+</manifest>

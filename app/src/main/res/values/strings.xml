@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Glow Party</string>
+    <string name="notif_channel">Screen-off light show</string>
+    <string name="notif_title">Glow Party is running</string>
+    <string name="notif_text">Flashlight follows the music. Tap Stop to end.</string>
+    <string name="notif_stop">Stop</string>
+</resources>

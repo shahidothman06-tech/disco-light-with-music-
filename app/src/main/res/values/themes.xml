@@ -1,0 +1,13 @@
+<resources>
+    <color name="glow_bg">#FF0B0B0E</color>
+
+    <style name="Theme.GlowParty" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/glow_bg</item>
+    </style>
+
+    <style name="Theme.GlowParty.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/glow_bg</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="postSplashScreenTheme">@style/Theme.GlowParty</item>
+    </style>
+</resources>

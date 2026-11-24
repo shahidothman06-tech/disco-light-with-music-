@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Neon disco ball, drawn inside the 66dp adaptive-icon safe zone -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <path android:strokeColor="#1FE0E0" android:strokeWidth="2.5" android:fillColor="#00000000"
+        android:pathData="M54,36 a20,20 0 1,0 0.01,0 Z" />
+    <path android:strokeColor="#1FE0E0" android:strokeWidth="2" android:fillColor="#00000000"
+        android:pathData="M34,56 H74 M37,46 H71 M37,66 H71 M54,36 V76 M44,38.5 C39,49 39,63 44,73.5 M64,38.5 C69,49 69,63 64,73.5" />
+    <path android:strokeColor="#FF2D95" android:strokeWidth="2.5" android:strokeLineCap="round" android:fillColor="#00000000"
+        android:pathData="M54,22 V30 M34,30 L39,35 M74,30 L69,35 M26,56 H31 M77,56 H82" />
+</vector>
